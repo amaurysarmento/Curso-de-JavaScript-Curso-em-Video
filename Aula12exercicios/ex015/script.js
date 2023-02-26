@@ -45,7 +45,7 @@ function verificar() {
             }
         }
         resultado.innerHTML = `O sexo selecionado foi ${gênero} com idade de ${idade} anos `
-        resultado.appendChild(img)
+        resultado.appendChild(img) /* ta buscando o método creat.Element() pra mostrar a imagem que o método set.Attribute() possue.*/
     }
 }
 
