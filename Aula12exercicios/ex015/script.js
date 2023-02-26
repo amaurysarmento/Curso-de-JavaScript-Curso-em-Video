@@ -1,6 +1,6 @@
 function verificar() {
-    var data = new Date()
-    var ano = data.getFullYear()
+    var data = new Date() // pega a hora atual do dispositivo
+    var ano = data.getFullYear() // pega o ano atual do dispositivo
     var formAno = document.getElementById('txtano') /*formAno é o ano que o usuário vai colocar no formulário  */ 
     var resultado = document.querySelector('#resultado')
 
