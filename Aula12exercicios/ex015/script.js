@@ -1,45 +1,52 @@
 function verificar() {
     var data = new Date()
     var ano = data.getFullYear()
-    var fAno = document.getElementById('txtano') 
-    var res = document.querySelector('#res')
+    var formAno = document.getElementById('txtano') /*formAno é o ano que o usuário vai colocar no formulário  */ 
+    var resultado = document.querySelector('#resultado')
 
-    if (fAno.value.length == 0 || Number(fAno.value) > ano) {
+    if (formAno.value.length == 0 || Number(formAno.value) > ano) {
         alert('[ERROR] Verifique os dados e tente novamente!')
     } else {
-        var fsex = document.getElementsByName('radsex')
-        var idade = ano - Number(fAno.value)
+        var formsex = document.getElementsByName('radsex') //formsex -> é pro formulario Masculino/Feminino
+        var idade = ano - Number(formAno.value)
         var gênero = ''
         var img = document.createElement('img')
-        img.setAttribute('id','foto')
-        if (fsex[0].checked) {
+        img.setAttribute('id', 'foto')
+        if (formsex[0].checked) {
             gênero = 'Homem'
             if (idade >= 0 && idade < 10) {
                 //CRIANÇA
-                img.setAttribute('src', 'criançam.jpg')
+                img.setAttribute('src', 'foto-criança-m.jpg')
             } else if (idade < 21) {
                 //Jovem
-                img.setAttribute('src', 'homem.jpg')
+                img.setAttribute('src', 'foto-homem.jpg')
             } else if (idade < 50) {
                 //Adulto
-                img.setAttribute('src', 'homemadulto.jpg')
+                img.setAttribute('src', 'foto-homem-adulto.jpg')
             } else {
                 //Idoso
-                img.setAttribute('src', 'senhorimg.jpg')
+                img.setAttribute('src', 'foto-senhor.jpg')
             }
 
-        } else if (fsex[1].checked)  {
+        } else if (formsex[1].checked)  {
             gênero = 'Mulher'
             if (idade >= 0 && idade < 10) {
                 //CRIANÇA
+                img.setAttribute('src', 'foto-criança-f.jpg')
             } else if (idade < 21) {
                 //Jovem
+                img.setAttribute('src', 'foto-mulher.jpg')
             } else if (idade < 50) {
                 //Adulto
+                img.setAttribute('src', 'foto-mulher-adulta.jpg')
             } else {
                 //Idoso
+                img.setAttribute('src', 'foto-senhora.jpg')
             }
         }
-        res.innerHTML = `O sexo selecionado foi ${gênero} com idade de ${idade} anos `
+        resultado.innerHTML = `O sexo selecionado foi ${gênero} com idade de ${idade} anos `
+        resultado.appendChild(img)
     }
 }
+
+//aula/exercício 15 do Curso JavaScript do Curso em Vídeo
